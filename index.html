@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef Express - Edição Especial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Ícone de Engrenagem (Configurações) -->
+        <button id="settings-toggle-btn">⚙️</button>
+
+        <!-- Painel de Configurações -->
+        <div id="settings-panel" style="display: none;">
+            <h3>Configurações</h3>
+            <div class="setting-item">
+                <label for="difficulty-select">Dificuldade:</label>
+                <select id="difficulty-select">
+                    <option value="easy">Fácil (Mais lento)</option>
+                    <option value="normal" selected>Normal</option>
+                    <option value="hard">Difícil (Frenético)</option>
+                </select>
+            </div>
+            <button id="reset-highscore-btn">Resetar Recorde</button>
+            <button id="close-settings-btn">Fechar</button>
+        </div>
+
+        <!-- Tela de Seleção de Chef -->
+        <div id="selection-screen">
+            <h2>Escolha seu Chef:</h2>
+            <div class="chef-options">
+                <button class="chef-btn" data-chef="alfredo">
+                    <span class="chef-emoji">👨‍🍳</span>
+                    <div class="chef-info">
+                        <span class="chef-name">Chef Alfredo</span>
+                        <span class="chef-specialty">Especialidade: Italiana 🍕</span>
+                    </div>
+                </button>
+                <button class="chef-btn" data-chef="julia">
+                    <span class="chef-emoji">👩‍🍳</span>
+                    <div class="chef-info">
+                        <span class="chef-name">Chef Julia</span>
+                        <span class="chef-specialty">Especialidade: Confeitaria 🍰</span>
+                    </div>
+                </button>
+                <button class="chef-btn" data-chef="panda">
+                    <span class="chef-emoji">🐼</span>
+                    <div class="chef-info">
+                        <span class="chef-name">Mestre Panda</span>
+                        <span class="chef-specialty">Especialidade: Oriental 🍣</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Elementos do Jogo -->
+        <div id="plate" style="display: none;">🍽️ <span id="chef-display">👨‍🍳</span></div>
+        <div id="ingredient" style="display: none;">🍕</div>
+        <div id="hud" style="display: none;">
+            <span id="score">Pontos: 0</span> | 
+            <span id="high-score">Recorde: 0</span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #2c3e50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+    user-select: none;
+}
+
+#game-container {
+    width: 400px;
+    height: 500px;
+    border: 4px solid #f39c12;
+    border-radius: 10px;
+    background-color: #34495e;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transition: background-color 0.5s ease;
+}
+
+/* Botão de Configurações */
+#settings-toggle-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 20;
+    transition: transform 0.3s;
+}
+#settings-toggle-btn:hover {
+    transform: rotate(90deg);
+}
+
+/* Painel de Configurações */
+#settings-panel {
+    position: absolute;
+    width: 80%;
+    top: 20%;
+    left: 10%;
+    background: white;
+    border: 3px solid #f39c12;
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+#settings-panel h3 {
+    text-align: center;
+    color: #2c3e50;
+}
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+}
+.setting-item select {
+    padding: 5px;
+    border-radius: 5px;
+}
+#reset-highscore-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+#close-settings-btn {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Tela de Seleção */
+#selection-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(44, 62, 80, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    padding: 20px;
+}
+#selection-screen h2 {
+    color: white;
+    margin-bottom: 25px;
+    font-size: 22px;
+}
+.chef-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 90%;
+}
+.chef-btn {
+    background: white;
+    border: 3px solid #f39c12;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.2s, background-color 0.2s;
+    text-align: left;
+}
+.chef-btn:hover {
+    transform: scale(1.03);
+    background-color: #f1c40f;
+}
+.chef-emoji { font-size: 32px; }
+.chef-info { display: flex; flex-direction: column; }
+.chef-name { font-size: 16px; font-weight: bold; color: #2c3e50; }
+.chef-specialty { font-size: 12px; color: #7f8c8d; }
+
+/* Jogo Principal */
+#plate {
+    width: 80px;
+    height: 40px;
+    font-size: 30px;
+    position: absolute;
+    bottom: 20px;
+    left: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#chef-display { position: absolute; font-size: 25px; top: -20px; }
+#ingredient {
+    width: 40px;
+    height: 40px;
+    font-size: 35px;
+    position: absolute;
+    top: -50px;
+    left: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#hud {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: #2c3e50;
+    font-size: 16px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
